@@ -1,4 +1,4 @@
-﻿import time
+import time
 from tcoreapi_mq import * 
 import tcoreapi_mq
 import threading
