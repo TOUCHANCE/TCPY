@@ -10,5 +10,4 @@ TCPY 是專為 TOUCHANCE 行情服務用戶提供的 Python 程式交易串接 A
 - [立即加入](https://www.touchance.com.tw/signup)
 
 ## TOUCHANCE Python API FaceBook 社團
-- https://www.facebook.com/groups/508068750594807
-- 現在加入 TOUCHANCE Python API 社團，分享你的使用心得即可獲得 TOUCHANCE Python 行情 API 的免費試用授權。
+- 現在加入 [TOUCHANCE Python API 社團](https://www.facebook.com/groups/508068750594807)，分享你的使用心得即可獲得 TOUCHANCE Python 行情 API 的免費試用授權。
