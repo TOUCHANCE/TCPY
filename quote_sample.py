@@ -8,7 +8,7 @@ g_QuoteSession = ""
 
 #實時行情回補
 def OnRealTimeQuote(symbol):
-    print("成交價:",symbol["TradingPrice"], "開:", symbol["OpeningPrice"], "高:", symbol["HighPrice"], "低:", symbol["ClosingPrice"])
+    print("商品：", symbol["Symbol"], "成交價:",symbol["TradingPrice"], "開:", symbol["OpeningPrice"], "高:", symbol["HighPrice"], "低:", symbol["LowPrice"])
 
 #行情消息接收
 def quote_sub_th(obj,sub_port,filter = ""):
