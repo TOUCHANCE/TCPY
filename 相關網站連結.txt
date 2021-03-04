@@ -1,0 +1,4 @@
+﻿GitHub首頁：https://github.com/
+我們的專案連結：https://github.com/TOUCHANCE/TCPY
+Fork下載連結：https://git-fork.com/
+Python官網下載頁面：https://www.python.org/downloads/
