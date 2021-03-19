@@ -63,7 +63,7 @@ def main():
 
 
     #查詢指定合约訊息
-    quoteSymbol = "TC.F.TWF.FITX.HOT"
+    quoteSymbol = "TC.F.TWF.FIMTX.HOT"
     #print("查詢指定合約：",g_QuoteZMQ.QueryInstrumentInfo(g_QuoteSession, quoteSymbol))
     #查詢指定類型合約列表
     #期貨：Fut
