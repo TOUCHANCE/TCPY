@@ -79,9 +79,9 @@ def main():
     #資料週期
     type = "TICKS"
     #起始時間
-    StrTim = '2021031600'
+    StrTim = '2021032100'
     #結束時間
-    EndTim = '2021031700'
+    EndTim = '2021032300'
     #資料頁數
     QryInd = '0'
 
@@ -91,29 +91,33 @@ def main():
     #等待回補
     #獲取回補的資料
     i = 0
+    x = 1
     while(1):  #等待訂閱回補
-        i=i+1
-        time.sleep(10)
         QPong = g_QuoteZMQ.Pong(g_QuoteSession)
-        print("第"+str(i*10)+"秒，Pong:",QPong)
+        print("第"+str(i*x)+"秒，Pong:",QPong)
         HisData = g_QuoteZMQ.GetHistory(g_QuoteSession, quoteSymbol, type, StrTim, EndTim, QryInd)
         if (len(HisData['HisData']) != 0):
             print("回補成功")
             i = 0
             break
         print("取得歷史資料:", HisData)
+        i = i + 1
+        time.sleep(x)
     f = open("歷史資料(TICKS).txt", 'w')
     f.close()
     while (1):  # 獲取訂閱成功的全部歷史資料並另存
-        i = i + 1
+        QPong = g_QuoteZMQ.Pong(g_QuoteSession)
+        print(QPong)
         HisData = g_QuoteZMQ.GetHistory(g_QuoteSession, quoteSymbol, type, StrTim, EndTim, QryInd)
-        print(HisData['HisData'][0])
-        f = open("歷史資料(TICKS).txt", 'a')
-        for key in HisData['HisData'][0]:
-            f.write(key + "：" + HisData['HisData'][0][key] + ",")
-        f.write('\n')
-        QryInd = str(int(QryInd) + 1)
-        time.sleep(1)
+        for j in range(50):
+            print("第"+str(j+QryInd)+"筆：")
+            print(HisData['HisData'][j])
+            f = open("歷史資料(TICKS).txt", 'a')
+            for key in HisData['HisData'][j]:
+                f.write(key + "：" + HisData['HisData'][j][key] + ",")
+            f.write('\n')
+            i = j
+        QryInd = str(int(QryInd) + i)
 
 if __name__ == '__main__':
     main()
