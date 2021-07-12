@@ -66,10 +66,10 @@ def main():
     quoteSymbol = "TC.F.TWF.FIMTX.HOT"
     #print("查詢指定合約：",g_QuoteZMQ.QueryInstrumentInfo(g_QuoteSession, quoteSymbol))
     #查詢指定類型合約列表
-    #期貨：Fut
-    #期權：Opt
-    #證券：Sto
-    #print("查詢合約：",g_QuoteZMQ.QueryAllInstrumentInfo(g_QuoteSession,"Fut"))
+    #期貨：FUT
+    #期權：OPT
+    #證券：STF
+    #print("查詢合約：",g_QuoteZMQ.QueryAllInstrumentInfo(g_QuoteSession,"FUT"))
 
 #####################################################################行情################################################
     #建立一個行情線程
