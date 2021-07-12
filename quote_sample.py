@@ -69,17 +69,17 @@ def main():
     #期貨：Fut
     #期權：Opt
     #證券：Fut2
-    print("查詢合約：",g_QuoteZMQ.QueryAllInstrumentInfo(g_QuoteSession,"Fut2"))
+    #print("查詢合約：",g_QuoteZMQ.QueryAllInstrumentInfo(g_QuoteSession,"Fut"))
 
 #####################################################################行情################################################
     #建立一個行情線程
-    #t2 = threading.Thread(target = quote_sub_th,args=(g_QuoteZMQ,q_data["SubPort"],))
-    #t2.start()
+    t2 = threading.Thread(target = quote_sub_th,args=(g_QuoteZMQ,q_data["SubPort"],))
+    t2.start()
     #實時行情訂閱
     #解除訂閱
-    #g_QuoteZMQ.UnsubQuote(g_QuoteSession, quoteSymbol)
+    g_QuoteZMQ.UnsubQuote(g_QuoteSession, quoteSymbol)
     #訂閱實時行情
-    #g_QuoteZMQ.SubQuote(g_QuoteSession, quoteSymbol)
+    g_QuoteZMQ.SubQuote(g_QuoteSession, quoteSymbol)
 
 if __name__ == '__main__':
     main()
