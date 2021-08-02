@@ -8,7 +8,19 @@ g_QuoteSession = ""
 
 #實時行情回補
 def OnRealTimeQuote(symbol):
-    print("商品：", symbol["Symbol"], "成交價:",symbol["TradingPrice"], "開:", symbol["OpeningPrice"], "高:", symbol["HighPrice"], "低:", symbol["LowPrice"])
+    #print("商品：", symbol["Symbol"], "成交價:",symbol["TradingPrice"], "開:", symbol["OpeningPrice"], "高:", symbol["HighPrice"], "低:", symbol["LowPrice"])
+    print("整合資料Quote=",symbol)
+    print("訂閱目標：",symbol['SecurityName'])
+    print("訂閱目標：",symbol['Symbol'])
+    print("訂閱目標：",symbol['HighPrice'])
+    print("訂閱目標：",symbol['LowPrice'])
+    print("訂閱目標：",symbol['TradingPrice'])
+    print("訂閱目標：",symbol['TradeQuantity'])
+    print("訂閱目標：",symbol['TradeVolume'])
+    print("訂閱目標：",symbol['Bid1'])
+    print("訂閱目標：",symbol['BidVolume'])
+    print("訂閱目標：",symbol['Ask1'])
+    print("訂閱目標：",symbol['AskVolume'])
 
 #行情消息接收
 def quote_sub_th(obj,sub_port,filter = ""):
@@ -63,7 +75,7 @@ def main():
 
 
     #查詢指定合约訊息
-    quoteSymbol = "TC.F.TWF.FIMTX.HOT"
+    quoteSymbol = "TC.F.TWF.FITX.HOT"
     #print("查詢指定合約：",g_QuoteZMQ.QueryInstrumentInfo(g_QuoteSession, quoteSymbol))
     #查詢指定類型合約列表
     #期貨：Fut
