@@ -113,22 +113,23 @@ def main():
         if len(arrInfo) != 0:
             #print("@@@@@@@@@@@:",arrInfo[0],"\n")
             strAccountMask = arrInfo[0]["AccountMask"]
-            
+            print(strAccountMask)
+
             #查詢委託紀錄
             reportData = g_TradeZMQ.QryReport(g_TradeSession,"")
-            #print('查詢回報:',reportData)
+            print('查詢所有回報:',reportData)
             ShowEXECUTIONREPORT(g_TradeZMQ,g_TradeSession,reportData)
             fillReportData = g_TradeZMQ.QryFillReport(g_TradeSession,"")
-            #print('查詢回報:', fillReportData)
+            print('查詢成交回報:', fillReportData)
             ShowFillReport(g_TradeZMQ,g_TradeSession,fillReportData)
 
             #查詢資金
             if strAccountMask !="":
-                print(g_TradeZMQ.QryMargin(g_TradeSession,strAccountMask))
+                print("查詢資金帳號：",g_TradeZMQ.QryMargin(g_TradeSession,strAccountMask))
             
             #查詢持倉
             positionData = g_TradeZMQ.QryPosition(g_TradeSession,strAccountMask,"")
-            #rint('持倉查詢:',positionData)
+            print('查詢持倉部位:',positionData)
             ShowPOSITIONS(g_TradeZMQ,g_TradeSession,strAccountMask,positionData)
 
             #下單
@@ -143,8 +144,8 @@ def main():
             "OrderQty":"1",
             "PositionEffect":"0"
             }
-            #s_order = g_TradeZMQ.NewOrder(g_TradeSession,orders_obj)
-            #print('下單結果:',s_order)
+            s_order = g_TradeZMQ.NewOrder(g_TradeSession,orders_obj)
+            print('下單結果:',s_order)
 
             """
             if s_order['Success']=="OK":

@@ -11,3 +11,6 @@ TCPY 是專為 TOUCHANCE 行情服務用戶提供的 Python 程式交易串接 A
 
 ## TOUCHANCE Python API FaceBook 社團
 - 現在加入 [TOUCHANCE Python API 社團](https://www.facebook.com/groups/508068750594807)，分享你的使用心得即可獲得 TOUCHANCE Python 行情 API 的免費試用授權。
+
+## TOUCHANCE 海期報價
+- Python API提供的海外行情，是直接從聯合報價平台上直送的行情；所以收取海期報價時，若有遇到使用上被認定為不方便或是不適合的資料，請自行使用程式來濾除
