@@ -38,6 +38,7 @@ class TCoreZMQ():
 
     #连线登出
     def Logout(self, sessionKey):
+        self.m_objZMQKeepAlive.Close()
         self.lock.acquire()
         obj = {"Request":"LOGOUT","SessionKey":sessionKey}
         self.socket.send_string(json.dumps(obj))
